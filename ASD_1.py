@@ -61,24 +61,27 @@ def modified_bubble_sort(arr):
                 swapped = True
         if not swapped:
             break
-        print(f" Total Compares {compares}\n")
-        print(f" Total Swaps {swaps}\n")
+    print(f" Total Compares {compares}\n")
+    print(f" Total Swaps {swaps}\n")
 
 size_of_sorted_array = [10, 100, 1000,5000, 10000, 20000, 50000]
 
 
-for i in range(len(size_of_sorted_array) - 1):
-    shell_sort(generate_sorted_array(size_of_sorted_array[i]))
-    bubble_sort(generate_sorted_array(size_of_sorted_array[i]))
-    modified_bubble_sort(generate_sorted_array(size_of_sorted_array[i]))
+# for i in range(len(size_of_sorted_array) - 1):
+#     shell_sort(generate_sorted_array(size_of_sorted_array[i]))
+#     bubble_sort(generate_sorted_array(size_of_sorted_array[i]))
+#     modified_bubble_sort(generate_sorted_array(size_of_sorted_array[i]))
+#
+# for i in range(len(size_of_sorted_array) - 1):
+#     shell_sort(generate_reversed_sorted_array(size_of_sorted_array[i]))
+#     bubble_sort(generate_reversed_sorted_array(size_of_sorted_array[i]))
+#     modified_bubble_sort(generate_reversed_sorted_array(size_of_sorted_array[i]))
+#
+# for i in range(len(size_of_sorted_array) - 1):
+#     shell_sort(generate_random_array(size_of_sorted_array[i]))
+#     bubble_sort(generate_random_array(size_of_sorted_array[i]))
+#     modified_bubble_sort(generate_random_array(size_of_sorted_array[i]))
 
-for i in range(len(size_of_sorted_array) - 1):
-    shell_sort(generate_reversed_sorted_array(size_of_sorted_array[i]))
-    bubble_sort(generate_reversed_sorted_array(size_of_sorted_array[i]))
-    modified_bubble_sort(generate_reversed_sorted_array(size_of_sorted_array[i]))
-
-for i in range(len(size_of_sorted_array) - 1):
-    shell_sort(generate_random_array(size_of_sorted_array[i]))
-    bubble_sort(generate_random_array(size_of_sorted_array[i]))
-    modified_bubble_sort(generate_random_array(size_of_sorted_array[i]))
-
+shell_sort(generate_random_array(size_of_sorted_array[-1]))
+bubble_sort(generate_random_array(size_of_sorted_array[-1]))
+modified_bubble_sort(generate_random_array(size_of_sorted_array[-1]))
