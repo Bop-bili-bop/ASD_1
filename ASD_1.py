@@ -64,31 +64,21 @@ def modified_bubble_sort(arr):
         print(f" Total Compares {compares}\n")
         print(f" Total Swaps {swaps}\n")
 
+size_of_sorted_array = [10, 100, 1000,5000, 10000, 20000, 50000]
 
-shell_sort(generate_sorted_array(10))
-bubble_sort(generate_sorted_array(10))
-modified_bubble_sort(generate_sorted_array(10))
 
-shell_sort(generate_sorted_array(100))
-bubble_sort(generate_sorted_array(100))
-modified_bubble_sort(generate_sorted_array(100))
+for i in range(len(size_of_sorted_array) - 1):
+    shell_sort(generate_sorted_array(size_of_sorted_array[i]))
+    bubble_sort(generate_sorted_array(size_of_sorted_array[i]))
+    modified_bubble_sort(generate_sorted_array(size_of_sorted_array[i]))
 
-shell_sort(generate_sorted_array(1000))
-bubble_sort(generate_sorted_array(1000))
-modified_bubble_sort(generate_sorted_array(1000))
+for i in range(len(size_of_sorted_array) - 1):
+    shell_sort(generate_reversed_sorted_array(size_of_sorted_array[i]))
+    bubble_sort(generate_reversed_sorted_array(size_of_sorted_array[i]))
+    modified_bubble_sort(generate_reversed_sorted_array(size_of_sorted_array[i]))
 
-shell_sort(generate_sorted_array(5000))
-bubble_sort(generate_sorted_array(5000))
-modified_bubble_sort(generate_sorted_array(5000))
+for i in range(len(size_of_sorted_array) - 1):
+    shell_sort(generate_random_array(size_of_sorted_array[i]))
+    bubble_sort(generate_random_array(size_of_sorted_array[i]))
+    modified_bubble_sort(generate_random_array(size_of_sorted_array[i]))
 
-shell_sort(generate_sorted_array(10000))
-bubble_sort(generate_sorted_array(10000))
-modified_bubble_sort(generate_sorted_array(10000))
-
-shell_sort(generate_sorted_array(20000))
-bubble_sort(generate_sorted_array(20000))
-modified_bubble_sort(generate_sorted_array(20000))
-
-shell_sort(generate_sorted_array(50000))
-bubble_sort(generate_sorted_array(50000))
-modified_bubble_sort(generate_sorted_array(50000))
