@@ -1,7 +1,6 @@
 import random
-
-
-
+import matplotlib.pyplot as plt
+import numpy as np
 def generate_random_array(size):
     array = []
     for i in range(size):
@@ -12,7 +11,6 @@ def generate_sorted_array(size):
 
 def generate_reversed_sorted_array(size):
     return list(range(size - 1, -1, -1))
-
 def shell_sort(arr):
     compares = 0
     swaps = 0
@@ -24,16 +22,18 @@ def shell_sort(arr):
         for i in range(gap, size):
             temp = arr[i]
             j = i
-            while j >= gap and arr[j - gap] > temp:
-                compares+=1
-                arr[j] = arr[j - gap]
-                j -= gap
-                swaps += 1
+            while j >= gap:
+                compares += 1
+                if arr[j - gap] > temp:
+                    arr[j] = arr[j - gap]
+                    swaps += 1
+                    j -= gap
+                else:
+                    break
             arr[j] = temp
         gap //= 3
-    print(f" Total Compares {compares}")
-    print(f" Total Swaps {swaps}")
-
+    print(f"Total Compares: {compares}")
+    print(f"Total Swaps: {swaps}")
 def bubble_sort(arr):
     compares = 0
     swaps = 0
@@ -44,8 +44,8 @@ def bubble_sort(arr):
             if arr[j] > arr[j + 1]:
                 swaps += 1
                 arr[j], arr[j + 1] = arr[j + 1], arr[j]
-    print(f" Total Compares: {compares} \n")
-    print(f" Total Swaps: {swaps}\n")
+    print(f" Total Compares: {compares}")
+    print(f" Total Swaps: {swaps}")
 
 def modified_bubble_sort(arr):
     compares = 0
@@ -61,27 +61,16 @@ def modified_bubble_sort(arr):
                 swapped = True
         if not swapped:
             break
-    print(f" Total Compares {compares}\n")
-    print(f" Total Swaps {swaps}\n")
+    print(f" Total Compares {compares}")
+    print(f" Total Swaps {swaps}")
 
 size_of_sorted_array = [10, 100, 1000,5000, 10000, 20000, 50000]
 
-
-# for i in range(len(size_of_sorted_array) - 1):
-#     shell_sort(generate_sorted_array(size_of_sorted_array[i]))
-#     bubble_sort(generate_sorted_array(size_of_sorted_array[i]))
-#     modified_bubble_sort(generate_sorted_array(size_of_sorted_array[i]))
-#
-# for i in range(len(size_of_sorted_array) - 1):
-#     shell_sort(generate_reversed_sorted_array(size_of_sorted_array[i]))
-#     bubble_sort(generate_reversed_sorted_array(size_of_sorted_array[i]))
-#     modified_bubble_sort(generate_reversed_sorted_array(size_of_sorted_array[i]))
-#
-# for i in range(len(size_of_sorted_array) - 1):
-#     shell_sort(generate_random_array(size_of_sorted_array[i]))
-#     bubble_sort(generate_random_array(size_of_sorted_array[i]))
-#     modified_bubble_sort(generate_random_array(size_of_sorted_array[i]))
-
-shell_sort(generate_random_array(size_of_sorted_array[-1]))
-bubble_sort(generate_random_array(size_of_sorted_array[-1]))
-modified_bubble_sort(generate_random_array(size_of_sorted_array[-1]))
+for i in range(len(size_of_sorted_array)):
+    print(f"Total elements:{size_of_sorted_array[i]}")
+    print("shell sort:")
+    shell_sort(generate_reversed_sorted_array(size_of_sorted_array[i]))
+    print("bubble sort:")
+    bubble_sort(generate_reversed_sorted_array(size_of_sorted_array[i]))
+    print("modified bubble sort:")
+    modified_bubble_sort(generate_reversed_sorted_array(size_of_sorted_array[i]))
